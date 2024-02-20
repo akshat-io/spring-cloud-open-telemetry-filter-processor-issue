@@ -1,0 +1,56 @@
+*/bin/*
+bin/
+
+*.class
+
+# Eclipse
+.settings/
+*.project
+*.classpath
+.prefs
+*.prefs
+.metadata/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+out/
+
+# VSCode
+.vscode/
+
+# Mac
+.DS_Store
+
+# Maven
+log/*
+target/
+
+# Gradle
+.gradle/
+
+# SDKMan
+.sdkmanrc
+
+# Localstack
+**/.localstack
+
+#libraries-2
+libraries-2/employee*
+libraries-2/src/test/resources/crawler4j/**
+
+#web-modules/ninja
+devDb*.db
+
+#jaxb
+*.xjb
+
+#neo4j
+persistence-modules/neo4j/data/**
+/deep-shallow-copy/.mvn/wrapper
+/deep-shallow-copy/mvnw
+/deep-shallow-copy/mvnw.cmd
+
+#spring-5-webflux-2
+**/testdb.mv.db

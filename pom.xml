@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example.spring.cloud</groupId>
+    <artifactId>spring-cloud-open-telemetry</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-open-telemetry</name>
+    <packaging>pom</packaging>
+
+<!--    <parent>-->
+<!--        <groupId>com.example.spring.cloud</groupId>-->
+<!--        <artifactId>spring-cloud-modules</artifactId>-->
+<!--        <version>1.0.0-SNAPSHOT</version>-->
+<!--    </parent>-->
+
+    <modules>
+        <module>spring-cloud-open-telemetry1</module>
+        <module>spring-cloud-open-telemetry2</module>
+    </modules>
+
+    <properties>
+        <junit-jupiter.version>5.7.0</junit-jupiter.version>
+        <spring-boot-dependencies.version>2.7.9</spring-boot-dependencies.version>
+        <release.train.version>2021.0.5</release.train.version>
+        <spring-cloud-sleuth-otel.version>1.1.2</spring-cloud-sleuth-otel.version>
+        <otel-exporter-otlp.version>1.22.0</otel-exporter-otlp.version>
+    </properties>
+</project>

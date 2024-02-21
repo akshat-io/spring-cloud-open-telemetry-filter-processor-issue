@@ -5,11 +5,11 @@ receivers:
       http:
 
 processors:
-  filter/drophttp:
+  filter/productidonly:
     error_mode: ignore
     traces:
       span:
-        - attributes["http.request.method"] != nil
+        - attributes["productId"] == nil
   batch:
 
 exporters:
@@ -24,5 +24,5 @@ service:
   pipelines:
     traces:
       receivers: [ otlp ]
-      processors: [ batch ]
+      processors: [ filter/productidonly, batch ]
       exporters: [ logging, jaeger ]

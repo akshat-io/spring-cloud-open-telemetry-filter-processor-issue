@@ -5,11 +5,23 @@ receivers:
       http:
 
 processors:
-  filter/productidonly:
-    error_mode: ignore
-    traces:
-      span:
-        - attributes["productId"] == nil
+  tail_sampling:
+    decision_wait: 5s
+    num_traces: 2
+    expected_new_traces_per_sec: 2
+    policies:
+      [
+        {
+          name: test-product-id,
+          type: ottl_condition,
+          ottl_condition: {
+            error_mode: ignore,
+            span: [
+              "attributes[\"productId\"] == nil",
+            ]
+          }
+        }
+      ]
   batch:
 
 exporters:
@@ -24,5 +36,5 @@ service:
   pipelines:
     traces:
       receivers: [ otlp ]
-      processors: [ filter/productidonly, batch ]
+      processors: [ tail_sampling, batch ]
       exporters: [ logging, jaeger ]
